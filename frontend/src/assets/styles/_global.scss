@@ -1,0 +1,241 @@
+@import "variables";
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+ html {
+   scroll-behavior: smooth;
+ }
+
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: $text-blue-color;
+  font-family: 'Lora', serif;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  padding: 0;
+}
+h3 {
+  color: $text-blue-color;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 130%;
+  margin: 30px 0 10px;
+  padding: 0;
+}
+p, ul {
+  color: $text-dark-blue-color;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 10px 0;
+  padding: 0;
+}
+
+ul {
+  padding: 10px;
+  margin-left: 10px;
+  li::marker {
+    font-size: 9px;
+  }
+}
+
+
+
+.button {
+  border-radius: 5px;
+  background: $text-blue-color;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  box-sizing: border-box;
+  outline: none;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  &:disabled {
+    background: gray;
+    cursor: not-allowed;
+  }
+}
+
+
+
+.input {
+  padding-left: 20px;
+  box-sizing: border-box;
+  border: 2px solid $text-blue-color;
+  border-radius: 3px;
+  background: rgb(255, 255, 255);
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: $text-dark-blue-color;
+  outline: none;
+
+  &::placeholder {
+    color: rgb(168, 171, 167);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.select {
+  padding-left: 20px;
+  box-sizing: border-box;
+  border: 2px solid $text-blue-color;
+  border-radius: 3px;
+  background: rgb(255, 255, 255);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  color: $text-blue-color;
+
+
+  &::-ms-expand {
+    display: none;
+  }
+  option {
+  color: $text-dark-blue-color;
+    padding: 2px;
+  }
+}
+
+.snackBar {
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  background-color: $text-blue-color;
+  .mat-simple-snackbar {
+    justify-content: center;
+  }
+}
+
+.mat-menu-item {
+  color: $text-dark-blue-color;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+mat-dialog-container.mat-dialog-container {
+  padding: 94px 152px 86px;
+
+  .dialog-title {
+    max-width: 406px;
+    color: $text-blue-color;
+    font-family: 'Lora', serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 130%;
+    text-align: center;
+    margin-bottom: 20px;
+
+    &.dialog-title-second {
+      max-width: 443px;
+    }
+  }
+  .dialog-input {
+    margin-bottom: 5px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    input, &.select {
+      width: 422px;
+      height: 53px;
+    }
+
+    .text-error {
+      color: red;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      text-align: center;
+      max-width: 400px;
+      margin-top: 3px;
+    }
+  }
+  .dialog-text {
+    color: $text-dark-blue-color;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .dialog-actions {
+    margin-top: 20px;
+
+
+    .button {
+      margin: 0 auto;
+      width: 422px;
+      height: 51px;
+      &.dialog-button-second {
+        width: 73px;
+        height: 36px;
+      }
+    }
+  }
+}
+
+span.selection {
+  color: $text-blue-color;
+}
+
+.article-carousel {
+  .owl-dots {
+    z-index: 100;
+    position: absolute;
+    bottom: 15px;
+    left: calc(50% - 45px);
+  }
+  .owl-dots .owl-dot span {
+    background: transparent !important;
+    box-sizing: border-box;
+    border: 1px solid rgb(255, 255, 255);
+    margin: 5px 10px;
+  }
+
+  .owl-dots .owl-dot.active span,
+  .owl-dots .owl-dot:hover span {
+    background: rgb(255, 255, 255) !important;
+  }
+}
+
+

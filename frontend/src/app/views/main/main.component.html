@@ -1,0 +1,236 @@
+<section class="main">
+  <div class="container">
+
+    <div class="main-shares">
+      <div class="main-shares-arrows">
+        <a class="previous-arrow" (click)="owlArticle.prev()"><img src="/assets/images/page/previous.png"
+                                                                   alt="previous-arrow"></a>
+        <a class="next-arrow" (click)="owlArticle.next()"><img src="/assets/images/page/next.png" alt="next-arrow"></a>
+      </div>
+      <owl-carousel-o [options]="customOptions" #owlArticle class="article-carousel">
+        <ng-template carouselSlide *ngFor="let slide of shares">
+          <div class="main-shares-item">
+            <div class="main-shares-item-background">
+              <div class="main-shares-item-background-circle"></div>
+              <div class="main-shares-item-background-image"
+                   style="background-image: url('/assets/images/page/{{slide.image}}')"></div>
+            </div>
+            <div class="main-shares-content">
+              <div class="main-shares-content-wrap">
+                <div class="main-shares-subtitle">{{ slide.subtitle}}</div>
+                <div class="main-shares-title">
+                  <div [innerHTML]="slide.title"></div>
+                </div>
+                <div *ngIf="slide.description" class="main-shares-description">{{slide.description}}</div>
+              </div>
+              <div class="main-shares-action">
+                <button class="button" (click)="openDialog()">Подробнее</button>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+
+
+<section class="services" id="services">
+  <div class="container">
+    <h2>Услуги, которые мы предлагаем</h2>
+    <div class="popular-articles">
+      <article-card [card]="card" [typeCard]="'service'" *ngFor="let card of services"></article-card>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-image">
+      <img src="/assets/images/page/about.png" alt="сотрудники">
+    </div>
+    <div class="about-info">
+      <h2>Кто мы и чем мы занимаемся?</h2>
+      <div class="about-info-description">
+        <span>АйтиШторм</span> — это ваш помощник №1 при решении таких вопросов, как продвижение в сети, разработка
+        сайтов для
+        бизнеса и личного бренда, сторисмейкинг, копирайтинг, маркетинг, разработка визуальной концепции и создание
+        инфопродуктов. Компания была основана в 2019 году и за всё это время смогла выйти в ТОП-10 агенств, предлагающих
+        услуги продвижения в сети.
+      </div>
+      <div class="about-info-advantages">
+        <div class="about-info-advantages-title">Наши преимущества</div>
+        <div class="about-info-advantages-items">
+          <div class="about-info-advantages-item">
+            <div class="about-info-advantage-number">
+              <div class="about-info-advantage-number-extra">1</div>
+            </div>
+            <div class="about-info-advantage-description">
+              <span>Мастерски вовлекаем аудиторию в процесс.</span> Мы увеличиваем процент вовлечённости за короткий
+              промежуток времени.
+            </div>
+          </div>
+          <div class="about-info-advantages-item">
+            <div class="about-info-advantage-number">
+              <div class="about-info-advantage-number-extra">2</div>
+            </div>
+            <div class="about-info-advantage-description">
+              <span>Разрабатываем бомбическую визуальную концепцию.</span> Наши специалисты знают как создать уникальный
+              образ вашего проекта.
+            </div>
+          </div>
+          <div class="about-info-advantages-item">
+            <div class="about-info-advantage-number">
+              <div class="about-info-advantage-number-extra">3</div>
+            </div>
+            <div class="about-info-advantage-description">
+              <span>Создаём мощные воронки с помощью текстов.</span> Наши копирайтеры создают не только вкусные текста,
+              но и классные воронки.
+            </div>
+          </div>
+          <div class="about-info-advantages-item">
+            <div class="about-info-advantage-number">
+              <div class="about-info-advantage-number-extra">4</div>
+            </div>
+            <div class="about-info-advantage-description">
+              <span>Помогаем продавать больше.</span> Мы не только помогаем разработать стратегию по продажам, но также
+              корректируем её под нужды заказчика.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="popular">
+  <div class="container">
+    <h2>Популярные статьи из блога</h2>
+    <div class="popular-articles">
+      <article-card [card]="card" [typeCard]="'article'" *ngFor="let card of bestArticles"></article-card>
+    </div>
+    <div class="popular-link">
+      <a routerLink="/blog">
+        <span>Перейти в блог</span>
+        <svg width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink">
+          <rect id="Аrrow" width="16.000000" height="16.000000"
+                transform="translate(16.000000 16.000000) rotate(180.000000)" fill="#FFFFFF" fill-opacity="0"/>
+          <path id="Vector"
+                d="M5.44 1C5.59 1 5.75 1.05 5.87 1.17L11.18 6.44C12.05 7.29 12.05 8.7 11.18 9.55L5.87 14.82C5.63 15.05 5.24 15.05 5.01 14.82C4.77 14.59 4.77 14.2 5.01 13.96L10.32 8.7C10.71 8.31 10.71 7.68 10.32 7.29L5.01 2.03C4.77 1.79 4.77 1.41 5.01 1.17C5.13 1.06 5.28 1 5.44 1Z"
+                fill="#709FDC" fill-opacity="1.000000" fill-rule="nonzero"/>
+          <g opacity="0.000000"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="container">
+    <h2>Отзывы о нашей работе</h2>
+    <div class="reviews-carousel">
+      <owl-carousel-o [options]="customOptionsRev" #owlRev>
+        <ng-template carouselSlide *ngFor="let review of reviews">
+          <div class="review-item">
+            <div class="review-item-head">
+              <div class="review-item-image"
+                   style="background-image: url('/assets/images/page/{{review.image}}')"></div>
+              <div class="review-item-name">
+                {{review.name}}
+              </div>
+            </div>
+            <div class="review-item-text">
+              {{review.text}}
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+      <div class="reviews-arrows">
+        <a class="move-backward" (click)="owlRev.prev()">
+          <img src="/assets/images/page/previousRev.png" alt="arrow">
+        </a>
+        <a class="move-forward" (click)="owlRev.next()">
+          <img src="/assets/images/page/nextRev.png" alt="arrow">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contacts" id="contacts" #contactsElement>
+  <div class="container">
+    <div class="map">
+      <iframe
+        src="https://yandex.ru/map-widget/v1/?um=constructor%3A65677e72c34804c3fb536bb6841a5ad5c6b7678bf96bad0c5811fa0d97d1afb9&amp;source=constructor"
+        width="607" height="438" frameborder="0">
+      </iframe>
+    </div>
+    <div class="contacts-info">
+      <h2>Контакты </h2>
+      <div class="contacts-info-head">Адрес</div>
+      <div class="contacts-info-text">
+        Главный офис компании АйтиШторм находится по адресу Пресненская наб., 12, Москва, Россия, 123317.
+      </div>
+      <div class="contacts-info-head">Телефон</div>
+      <div class="contacts-info-text">
+        <a href="tel:+74993431334">+7 (499) 343-13-34</a>
+      </div>
+      <div class="contacts-info-head">Электронный адрес</div>
+      <div class="contacts-info-text">
+        <a href="mailto:info@itstorm.com">info@itstorm.com</a>
+      </div>
+      <div class="contacts-info-head">Мы в социальных сетях</div>
+      <div class="contacts-info-social">
+        <a href="https://vk.com" target="_blank">
+          <svg width="30.000000" height="30.000000" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <clipPath id="clip14_131">
+                <rect id="VK" width="30.000000" height="30.000000" fill="white" fill-opacity="0"/>
+              </clipPath>
+            </defs>
+            <rect id="VK" width="30.000000" height="30.000000" fill="#FFFFFF" fill-opacity="0"/>
+            <g clip-path="url(#clip14_131)">
+              <path id="Vector"
+                    d="M5.73 0.26C2.73 0.26 0.26 2.73 0.26 5.73L0.26 24.26C0.26 27.26 2.73 29.73 5.73 29.73L24.26 29.73C27.26 29.73 29.73 27.26 29.73 24.26L29.73 5.73C29.73 2.73 27.26 0.26 24.26 0.26L5.73 0.26ZM5.73 2.94L24.26 2.94C25.81 2.94 27.05 4.18 27.05 5.73L27.05 24.26C27.05 25.81 25.81 27.05 24.26 27.05L5.73 27.05C4.18 27.05 2.94 25.81 2.94 24.26L2.94 5.73C2.94 4.18 4.18 2.94 5.73 2.94ZM14.62 9.95C13.63 9.94 12.8 9.95 12.33 10.18C12.01 10.33 11.77 10.67 11.92 10.69C12.1 10.72 12.52 10.8 12.73 11.1C13.02 11.48 13.01 12.35 13.01 12.35C13.01 12.35 13.16 14.72 12.62 15.02C12.25 15.22 11.75 14.81 10.65 12.92C10.09 11.95 9.66 10.88 9.66 10.88C9.66 10.88 9.59 10.68 9.44 10.57C9.26 10.44 9.02 10.4 9.02 10.4L6.39 10.42C6.39 10.42 6 10.43 5.86 10.6C5.73 10.76 5.85 11.07 5.85 11.07C5.85 11.07 7.9 15.86 10.22 18.28C12.35 20.5 14.77 20.35 14.77 20.35L15.87 20.35C15.87 20.35 16.2 20.32 16.37 20.14C16.52 19.97 16.52 19.66 16.52 19.66C16.52 19.66 16.5 18.19 17.18 17.97C17.85 17.76 18.71 19.39 19.62 20.02C20.32 20.49 20.85 20.39 20.85 20.39L23.3 20.35C23.3 20.35 24.57 20.27 23.97 19.26C23.92 19.18 23.62 18.52 22.15 17.16C20.61 15.74 20.82 15.97 22.67 13.5C23.79 12 24.24 11.09 24.1 10.69C23.97 10.32 23.14 10.42 23.14 10.42L20.38 10.43C20.38 10.43 20.18 10.41 20.03 10.5C19.88 10.58 19.79 10.79 19.79 10.79C19.79 10.79 19.35 11.96 18.77 12.94C17.54 15.03 17.05 15.14 16.85 15.01C16.38 14.71 16.5 13.8 16.5 13.15C16.5 11.13 16.8 10.29 15.9 10.07C15.6 10 15.38 9.95 14.62 9.95Z"
+                    fill="#B9D5FD" fill-opacity="1.000000" fill-rule="nonzero"/>
+            </g>
+          </svg>
+        </a>
+        <a href="https://facebook.com" target="_blank">
+          <svg width="30.000732" height="30.000488" viewBox="0 0 30.0007 30.0005" fill="none"
+               xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <clipPath id="clip14_135">
+                <rect id="Facebook" width="30.000792" height="30.000486" fill="white" fill-opacity="0"/>
+              </clipPath>
+            </defs>
+            <rect id="Facebook" width="30.000792" height="30.000486" fill="#FFFFFF" fill-opacity="0"/>
+            <g clip-path="url(#clip14_135)">
+              <path id="Vector"
+                    d="M15 0C6.73 0 0 6.73 0 15C0 23.27 6.73 30 15 30C23.26 30 30 23.27 30 15C30 6.73 23.26 0 15 0ZM15 2.5C21.91 2.5 27.5 8.08 27.5 15C27.5 21.28 22.88 26.45 16.86 27.34L16.86 18.64L20.41 18.64L20.97 15.02L16.86 15.02L16.86 13.05C16.86 11.55 17.35 10.22 18.75 10.22L21.01 10.22L21.01 7.06C20.61 7.01 19.77 6.89 18.19 6.89C14.88 6.89 12.94 8.64 12.94 12.62L12.94 15.02L9.54 15.02L9.54 18.64L12.94 18.64L12.94 27.31C7.01 26.33 2.5 21.21 2.5 15C2.5 8.08 8.08 2.5 15 2.5Z"
+                    fill="#B9D5FD" fill-opacity="1.000000" fill-rule="nonzero"/>
+            </g>
+          </svg>
+        </a>
+        <a href="https://instagram.com/" target="_blank">
+          <svg width="30.000000" height="30.000000" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <clipPath id="clip14_133">
+                <rect id="Instagram" width="30.000000" height="30.000000" fill="white" fill-opacity="0"/>
+              </clipPath>
+            </defs>
+            <rect id="Instagram" width="30.000000" height="30.000000" fill="#FFFFFF" fill-opacity="0"/>
+            <g clip-path="url(#clip14_133)">
+              <path id="Vector"
+                    d="M8.93 0.26C4.17 0.26 0.26 4.17 0.26 8.93L0.26 21.06C0.26 25.82 4.17 29.73 8.93 29.73L21.06 29.73C25.82 29.73 29.73 25.82 29.73 21.06L29.73 8.93C29.73 4.17 25.82 0.26 21.06 0.26L8.93 0.26ZM8.93 2.94L21.06 2.94C24.38 2.94 27.05 5.61 27.05 8.93L27.05 21.06C27.05 24.37 24.38 27.05 21.06 27.05L8.93 27.05C5.62 27.05 2.94 24.37 2.94 21.06L2.94 8.93C2.94 5.61 5.62 2.94 8.93 2.94ZM22.91 5.87C22.23 5.87 21.69 6.41 21.69 7.08C21.69 7.76 22.23 8.3 22.91 8.3C23.58 8.3 24.12 7.76 24.12 7.08C24.12 6.41 23.58 5.87 22.91 5.87ZM15 6.96C10.57 6.96 6.96 10.57 6.96 14.99C6.96 19.42 10.57 23.03 15 23.03C19.42 23.03 23.03 19.42 23.03 14.99C23.03 10.57 19.42 6.96 15 6.96ZM15 9.64C17.97 9.64 20.35 12.02 20.35 14.99C20.35 17.97 17.97 20.35 15 20.35C12.02 20.35 9.64 17.97 9.64 14.99C9.64 12.02 12.02 9.64 15 9.64Z"
+                    fill="#B9D5FD" fill-opacity="1.000000" fill-rule="nonzero"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

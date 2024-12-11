@@ -1,0 +1,53 @@
+<div *ngIf="data.numberWindow === numberWindow.first"
+     class="dialog-title">{{data.typeDialog === typeDialog.consultation ? 'Закажите бесплатную консультацию!' : 'Заявка на услугу'}}</div>
+<div *ngIf="data.numberWindow === numberWindow.second" class="dialog-title dialog-title-second">Спасибо за вашу
+  заявку!
+</div>
+<form *ngIf="data.numberWindow === numberWindow.first" class="dialog-inputs" #reForm="ngForm">
+  <select class="dialog-input select" *ngIf="data.typeDialog === typeDialog.service" required
+          [(ngModel)]="requestForm.category" name="category" >
+    <option *ngIf="requestForm.category === 'undefined'"  disabled [value]="'undefined'">выберите услугу</option>
+    <option *ngFor="let category of categories" [value]="category.url">{{category.name}}</option>
+  </select>
+  <div class="dialog-input">
+    <input type="text" class="input" name="name" #name="ngModel" placeholder="Ваше имя" required
+           [(ngModel)]="requestForm.name"
+           [ngStyle]="{'border-color': name.invalid && (name.dirty || name.touched) ? 'red': ''}">
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <div class="text-error" *ngIf="name.errors?.['required']">
+        Как к Вам обращаться?
+      </div>
+    </div>
+  </div>
+  <div class="dialog-input">
+    <input type="tel" prefix="+7" mask="(000) 000 00 00"  class="input" name="phone" placeholder="Ваш номер телефона" #phone="ngModel"
+           [ngStyle]="{'border-color': phone.invalid && (phone.dirty || phone.touched) ? 'red': ''}"
+           required [(ngModel)]="requestForm.phone" autocomplete="off">
+    <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+      <div class="text-error" *ngIf="phone.errors?.['required']">
+        Напишите номер телефона
+      </div>
+      <div class="text-error" >
+        Номер должен быть в формате ххх ххх хх хх
+      </div>
+    </div>
+  </div>
+  <div class="dialog-actions">
+    <button *ngIf="data.typeDialog === typeDialog.consultation && data.numberWindow === numberWindow.first "
+            class="button" (click)="onClick(reForm, typeRequest.consultation)" type="submit" [disabled]="!reForm.valid">
+      Заказать консультацию
+    </button>
+    <button *ngIf="data.typeDialog === typeDialog.service && data.numberWindow === numberWindow.first" class="button"
+            (click)="onClick(reForm, typeRequest.order)" type="submit" [disabled]="!reForm.valid">Оставить заявку
+    </button>
+  </div>
+</form>
+<div *ngIf="data.numberWindow === numberWindow.second" class="dialog-text">
+  Мы свяжемся с вами при первой же возможности.
+</div>
+<div class="dialog-actions">
+  <button
+    *ngIf="data.numberWindow === numberWindow.second"
+    class="button dialog-button-second" (click)="onNoClick()">Окей
+  </button>
+</div>

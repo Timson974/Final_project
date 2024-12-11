@@ -1,0 +1,21 @@
+<div class="blog-filtration" [class.open]="open">
+  <div class="blog-filtration-head" (click)="toggle()">
+    <span>Фильтр</span>
+    <svg width="20.000000" height="20.000000" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink">
+      <rect id="Arrow" width="20.000000" height="20.000000" fill="#FFFFFF" fill-opacity="0"/>
+      <path id="Vector"
+            d="M10 14C9.41 14 8.83 13.77 8.39 13.33L2.95 7.9C2.71 7.65 2.71 7.25 2.95 7.01C3.2 6.77 3.6 6.77 3.84 7.01L9.27 12.45C9.67 12.85 10.32 12.85 10.72 12.45L16.15 7.01C16.4 6.77 16.79 6.77 17.04 7.01C17.28 7.25 17.28 7.65 17.04 7.9L11.6 13.33C11.16 13.77 10.58 14 10 14Z"
+            fill="#071739" fill-opacity="1.000000" fill-rule="nonzero"/>
+      <g opacity="0.000000"/>
+    </svg>
+  </div>
+  <div class="blog-filtration-body">
+    <label class="blog-filtration-checkbox" *ngFor="let category of categories">
+      <span>{{category.name}}</span>
+      <input type="checkbox" class="custom-checkbox" #input
+             [checked] = "activeParams.categories.includes(category.url)"
+             (change)="updateFilterParam(category.url, input.checked)">
+    </label>
+  </div>
+</div>

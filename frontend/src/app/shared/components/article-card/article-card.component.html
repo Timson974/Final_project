@@ -1,0 +1,28 @@
+<div [ngClass]="{'service': typeCard === 'service'}"  class="article-card" *ngIf="card" (click)="goToArticle(card.url)">
+  <div class="article-card-content">
+    <div *ngIf="card.category && typeCard === 'article'" class="article-card-category">
+      <span>{{card.category}}</span>
+    </div>
+    <div *ngIf="typeCard === 'article' " class="article-card-image" style="background-image: url({{serverStaticPath + card.image}})"></div>
+    <div *ngIf="typeCard === 'service' " class="article-card-image" style="background-image: url({{'/assets/images/page/' + card.image}})"></div>
+    <div class="article-card-title">
+      {{card.title}}
+    </div>
+    <div class="article-card-description">
+       {{card.description}}
+    </div>
+  </div>
+  <div *ngIf="typeCard === 'service' " class="article-card-extra">
+    <div class="article-card-extra-price">
+      От {{card.price}}&#8381;
+    </div>
+    <div class="article-card-extra-action">
+      <button class="button" (click)="openDialog(card.category)">Подробнее</button>
+    </div>
+  </div>
+
+  <div *ngIf="typeCard === 'article' "  class="article-card-detail">
+    <a  [routerLink]="'/article/' + card.url" class="article-card-link">Читать дальше</a>
+  </div>
+
+</div>

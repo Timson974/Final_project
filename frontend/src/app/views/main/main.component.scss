@@ -1,0 +1,364 @@
+@import "../../../assets/styles/variables";
+
+.main {
+  margin-bottom: 126px;
+  .container {
+    .main-shares {
+      position: relative;
+
+      .main-shares-arrows {
+        position: absolute;
+        top: calc(50% - 14px);
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        z-index: 100;
+
+        .previous-arrow {
+          margin-left: 10px;
+          cursor: pointer;
+        }
+        .next-arrow {
+          margin-right: 10px;
+          cursor: pointer;
+        }
+      }
+
+      .main-shares-item {
+        position: relative;
+        padding: 100px 0 86px 80px;
+
+        .main-shares-item-background {
+          position: absolute;
+          overflow: hidden;
+          top:0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+
+          .main-shares-item-background-circle {
+            width: 1405px;
+            height: 1405px;
+            border-radius: 50%;
+            background-color: rgb(185, 213, 253);
+            position: absolute;
+            top: -148%;
+            left: -56%;
+            z-index: 1;
+          }
+
+          .main-shares-item-background-image {
+            background-size: cover;
+            background-position: center;
+            width: 750px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
+        }
+
+        .main-shares-content {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 302px;
+          z-index: 5;
+
+          .main-shares-content-wrap {
+            .main-shares-subtitle {
+              color: $text-blue-color;
+              font-family: 'Montserrat', sans-serif;
+              font-size: 12px;
+              font-weight: 600;
+              line-height: 130%;
+              letter-spacing: 5px;
+              text-align: left;
+              text-transform: uppercase;
+            }
+
+            .main-shares-title {
+              font-family: 'Lora', serif;
+              font-size: 50px;
+              font-weight: 400;
+              line-height: 130%;
+              color: rgb(255, 255, 255);
+              max-width: 610px;
+            }
+
+            .main-shares-description {
+              margin-top: 20px;
+              color: rgb(255, 255, 255);
+              font-family: 'Montserrat', sans-serif;
+              font-size: 24px;
+              font-weight: 400;
+              line-height: 130%;
+              max-width: 456px;
+            }
+          }
+
+          .main-shares-action {
+            button.button {
+              width: 163px;
+              height: 51px;
+            }
+          }
+          }
+
+      }
+    }
+  }
+}
+
+.services {
+  padding-bottom: 114px;
+
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  .popular-articles {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+}
+
+.about {
+  padding-bottom: 120px;
+  .container {
+    display: flex;
+
+    .about-image {
+      max-width: 468px;
+      margin-right: 68px;
+    }
+
+    .about-info {
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      .about-info-description {
+        color: rgb(30, 26, 43);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 130%;
+        max-width: 633px;
+        margin-bottom: 40px;
+
+        span {
+          font-weight: 500;
+        }
+      }
+
+      .about-info-advantages {
+        .about-info-advantages-title {
+          color: $text-blue-color;
+          font-family: 'Lora', serif;
+          font-size: 26px;
+          font-weight: 400;
+          margin-bottom: 20px;
+        }
+
+        .about-info-advantages-items {
+          display: grid;
+          grid-template-columns: repeat(2, 316px);
+          column-gap: 71px;
+          row-gap: 20px;
+
+          .about-info-advantages-item {
+            display: flex;
+            align-items: center;
+
+
+            .about-info-advantage-number {
+              position: relative;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background-color: rgb(185, 213, 253);
+              flex-shrink: 0;
+              margin-right: 20px;
+
+              .about-info-advantage-number-extra {
+                color: rgb(112, 159, 220);
+                font-family: 'Lora', sans-serif;
+                font-size: 50px;
+                font-weight: 500;
+
+                position: absolute;
+                top: -18px;
+                left: 9px;
+
+              }
+            }
+
+            .about-info-advantage-description {
+              color: rgb(30, 26, 43);
+              font-family: 'Montserrat', sans-serif;
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 130%;
+              max-width: 250px;
+
+              span {
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.popular {
+  padding-bottom: 120px;
+
+  h2 {
+    margin-bottom: 40px;
+  }
+  .popular-articles {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .popular-link {
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      span {
+        color: $text-blue-color;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        margin-right: 14px;
+      }
+    }
+  }
+}
+
+.reviews {
+  padding-bottom: 120px;
+  .container {
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+  .reviews-carousel {
+    position: relative;
+
+    .review-item {
+      width: 396px;
+      height: 267px;
+      padding: 30px;
+      box-sizing: border-box;
+      border: 2px solid $text-blue-color;
+      border-radius: 5px;
+
+      .review-item-head {
+        display: flex;
+        align-items: center;
+
+        .review-item-image {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background-position: center;
+          background-size: cover;
+          margin-right: 26px;
+        }
+
+        .review-item-name {
+          color: $text-blue-color;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+
+      .review-item-text {
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 16px;
+        color: $text-dark-blue-color;
+        font-size: 16px;
+        line-height: 140%;
+        font-weight: 400;
+      }
+    }
+    .reviews-arrows {
+      display: flex;
+      a {
+        top: calc(50% - 5px);
+        display: flex;
+        position: absolute;
+        cursor: pointer;
+
+        &.move-backward {
+          left: -41px;
+        }
+        &.move-forward {
+          right: -41px;
+        }
+      }
+    }
+  }
+}
+
+.contacts {
+  padding-bottom: 120px;
+
+  .container {
+    display: flex;
+
+    .map {
+      margin-right: 26px;
+    }
+
+    .contacts-info {
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      .contacts-info-head {
+        color: $text-blue-color;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+
+      .contacts-info-text {
+        color: $text-dark-blue-color;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 130%;
+        max-width: 501px;
+        margin-bottom: 20px;
+
+        a {
+          color: $text-dark-blue-color;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+
+      .contacts-info-social {
+        display: flex;
+        a {
+          margin-right: 20px;
+        }
+      }
+    }
+
+  }
+}

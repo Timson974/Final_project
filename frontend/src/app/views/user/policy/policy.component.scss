@@ -1,0 +1,30 @@
+@import "../../../../assets/styles/variables";
+.policy {
+  padding: 40px 0;
+  color: $text-dark-blue-color;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%;
+
+  h2, h3 {
+    font-family: 'Lora', serif;
+
+  }
+  ol ol{
+    margin-top: 10px;
+    counter-reset: subsection;
+    list-style-type: none;
+
+    li {
+      display: block;
+      margin-bottom: 5px;
+
+      &::before {
+        margin-right: 15px;
+        counter-increment: subsection;
+        content: "1." counter(subsection);
+      }
+    }
+}
+}
