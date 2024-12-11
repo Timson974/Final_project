@@ -4,7 +4,9 @@
       <span>{{card.category}}</span>
     </div>
     <div *ngIf="typeCard === 'article' " class="article-card-image" style="background-image: url({{serverStaticPath + card.image}})"></div>
+
     <div *ngIf="typeCard === 'service' " class="article-card-image" style="background-image: url({{'/assets/images/page/' + card.image}})"></div>
+
     <div class="article-card-title">
       {{card.title}}
     </div>

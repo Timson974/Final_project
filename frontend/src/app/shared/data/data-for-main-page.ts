@@ -2,18 +2,18 @@ export const shares = [
   {
     subtitle: 'Предложение месяца',
     title: 'Продвижение в Instagram для вашего бизнеса <span class="selection">-15%</span>!',
-    image: 'slide1.png',
+    image: 'slide-1.png',
   },
   {
     subtitle: 'Акция',
     title: 'Нужен грамотный <span class="selection">копирайтер</span>?',
-    image: 'slide2.png',
+    image: 'slide-2.png',
     description: 'Весь декабрь у нас действует акция на работу копирайтера.',
   },
   {
     subtitle: 'Новость дня',
     title: '<span class="selection">6 место</span> в ТОП-10 SMM-агенств Москвы!',
-    image: 'slide3.png',
+    image: 'slide-3.png',
     description: 'Мы благодарим каждого, кто голосовал за нас!',
   },
 ];
@@ -23,7 +23,7 @@ export const services = [
     id: '1',
     title: "Создание сайтов",
     description: "В краткие сроки мы создадим качественный и самое главное продающий сайт для продвижения Вашего бизнеса!",
-    image: "frilans.png",
+    image: "freelance.png",
     category: "Фриланс",
     price: '7 500'
   },
@@ -39,7 +39,7 @@ export const services = [
     id: '3',
     title: "Реклама",
     description: "Без рекламы не может обойтись ни один бизнес или специалист. Обращаясь к нам, мы гарантируем быстрый прирост клиентов за счёт правильно настроенной рекламы.",
-    image: "target.png",
+    image: "advertising.png",
     category: "Таргет",
     price: '1 000'
   },
@@ -47,7 +47,7 @@ export const services = [
     id: '4',
     title: "Копирайтинг",
     description: "Наши копирайтеры готовы написать Вам любые продающие текста, которые не только обеспечат рост охватов, но и помогут выйти на новый уровень в продажах.",
-    image: "kopiraiting.png",
+    image: "copyrighting.png",
     category: "Копирайтинг",
     price: '750'
   },
@@ -56,17 +56,17 @@ export const services = [
 export const reviews = [
   {
     name: 'Станислав',
-    image: 'review1.png',
+    image: 'review-1.png',
     text: 'В ассортименте я встретила все комнатные растения, которые меня интересовали. Цены - лучшие в городе. Доставка - очень быстрая и с заботой о растениях. '
   },
   {
     name: 'Алёна',
-    image: 'review2.png',
+    image: 'review-2.png',
     text: 'Обратилась в АйтиШторм за помощью копирайтера. Ни разу ещё не пожалела! Ребята действительно вкладывают душу в то, что делают, и каждый текст, который я получаю, с нетерпением хочется выложить в сеть.'
   },
   {
     name: 'Мария',
-    image: 'review3.png',
+    image: 'review-3.png',
     text: 'Команда АйтиШторма за такой короткий промежуток времени сделала невозможное: от простой фирмы по услуге продвижения выросла в мощный блог о важности личного бренда. Класс!'
   },
 ]
