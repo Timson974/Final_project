@@ -46,11 +46,19 @@ export class BlogComponent implements OnInit, OnDestroy {
             });
             this.subscription.add(this.articleService.getArticles(this.activeParams)
               .subscribe(data => {
+                console.log('Articles data:', data); // Лог данных
                 this.pages = [];
                 for (let i = 1; i <= data.pages; i++) {
                   this.pages.push(i);
                 }
-                this.articles = data.items;
+                // Обработка пути к изображениям
+                this.articles = data.items.map(item => ({
+                  ...item,
+                  image: item.image
+                    ? 'http://localhost:3000/uploads/' + item.image
+                    : '/assets/images/default-placeholder.png',
+                }));
+                // this.articles = data.items;
               }))
           }))
       }));
@@ -92,5 +100,12 @@ export class BlogComponent implements OnInit, OnDestroy {
       })
     }
   }
+  // getImageUrl(image: string): string {
+  //   if (!image) {
+  //     return '/assets/images/default-placeholder.png'; // Заглушка, если изображения нет
+  //   }
+  //   return this.articleService.serverStaticPath + image; // Корректный путь к изображению
+  // }
+
 
 }
