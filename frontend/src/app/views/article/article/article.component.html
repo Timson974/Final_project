@@ -10,7 +10,12 @@
          <h2>{{article.title}}</h2>
           <div class="article-head-info-description">{{article.description}}</div>
         </div>
-        <div class="article-head-image" style="background-image: url({{serverStaticPath + article.image}})"></div>
+<!--        <div class="article-head-image" style="background-image: url({{serverStaticPath + article.image}})"></div>-->
+        <!-- Использование [ngStyle] -->
+        <div
+          class="article-head-image"
+          [ngStyle]="{ 'background-image': 'url(' + serverStaticPath + article.image + ')' }">
+        </div>
       </div>
       <div class="article-body">
         <div class="article-body-main">
@@ -18,7 +23,7 @@
           <div class="article-share-social">
             <span>Понравилась статья? Поделитесь ею в своих социальных сетях!</span>
 
-            <div class="ya-share2" data-curtain data-shape="round" data-services="vkontakte,odnoklassniki,moimir"></div>
+            <div class="ya-share2" data-curtain data-shape="round" data-services="VK, LinkedIn, WhatsApp, TikTok"></div>
             <a href="#">
               <svg width="19.999756" height="19.999695" viewBox="0 0 19.9998 19.9997" fill="none"
                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
