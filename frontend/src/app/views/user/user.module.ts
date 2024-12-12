@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -14,10 +14,11 @@ import { PolicyComponent } from './policy/policy.component';
     SignupComponent,
     PolicyComponent
   ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    UserRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        UserRoutingModule,
+        NgOptimizedImage
+    ]
 })
 export class UserModule { }
