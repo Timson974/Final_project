@@ -7,9 +7,9 @@ export type CategoriesType = {
 }
 
 export enum CategoriesUrl {
-  frilans = 'freelance',
-  dizain = 'design',
+  frilans = 'frilans',
+  dizain = 'dizain',
   smm = 'smm',
-  target = 'advertising',
-  kopiraiting = 'copyrighting',
+  target = 'target',
+  kopiraiting = 'kopiraiting',
 }
