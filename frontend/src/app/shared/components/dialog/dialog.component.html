@@ -3,6 +3,7 @@
 <div *ngIf="data.numberWindow === numberWindow.second" class="dialog-title dialog-title-second">Спасибо за вашу
   заявку!
 </div>
+
 <form *ngIf="data.numberWindow === numberWindow.first" class="dialog-inputs" #reForm="ngForm">
   <select class="dialog-input select" *ngIf="data.typeDialog === typeDialog.service" required
           [(ngModel)]="requestForm.category" name="category" >
