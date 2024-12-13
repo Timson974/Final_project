@@ -22,6 +22,7 @@ export class ArticlesFilterComponent implements OnInit, OnDestroy {
       this.activeParams = ActiveParamsUtil.processParams(params);
       if (params['categories']) {
         this.activeParams.categories = Array.isArray(params['categories']) ? params['categories'] : [params['categories']]
+        
       }
     })
   }

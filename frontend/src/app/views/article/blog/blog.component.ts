@@ -51,6 +51,7 @@ export class BlogComponent implements OnInit, OnDestroy {
                   this.pages.push(i);
                 }
                 this.articles = data.items;
+                console.log(this.articles); // Лог отформатированных статей
               }))
           }))
       }));
